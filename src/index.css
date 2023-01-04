@@ -1,13 +1,214 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 300;
+  user-select: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  width: 1em;
+  height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #9ef01a,
+    #a2d2ff,
+    #8ecae6,
+    #94d2bd,
+    #d0ff84
+  );
+  animation: change 8s ease-in-out infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+h2 {
+  margin: 0px;
+  padding: 5px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  word-spacing: 20px;
+}
+
+/* Style the header */
+.header {
+  padding: 30px 40px;
+  color: black;
+  text-align: center;
+  letter-spacing: 10px;
+}
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* input */
+input {
+  margin: 0;
+  border: 2px solid grey;
+  border-right: none;
+  border-radius: 50px 0 0 50px;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* Add button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: transparent;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: crosshair;
+  transition: 0.3s;
+  border-radius: 0 50px 50px 0;
+  border: 2px solid grey;
+  border-left: none;
+}
+.getBtn {
+  padding: 10px;
+  position: relative;
+  border: 0 solid;
+  color: black;
+  background-color: transparent;
+  border-radius: 6px;
+  width: 130px;
+  height: 30px;
+  font-size: 10px;
+}
+.getBtn:hover {
+  color: blue;
+  font-weight: bolder;
+}
+.clearBtn {
+  padding: 10px;
+  border: 0 solid;
+  background-color: transparent;
+  color: black;
+  border-radius: 6px;
+  width: 90px;
+  height: 30px;
+  font-size: 10px;
+}
+.clearBtn:hover {
+  color: blue;
+  font-weight: bolder;
+}
+/* .addBtn:hover {
+  background-color: rgb(226, 184, 228);
+} */
+
+/* list items */
+
+ul {
+  margin-left: 10%;
+  padding: 0;
+  width: 80%;
+  border: 2px solid grey;
+  border-radius: 6px;
+  box-shadow: 5px 8px 20px #555;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  font-size: 18px;
+  transition: 0.2s;
+  color: black;
+  user-select: none;
+  border-radius: 6px;
+}
+
+/* To show list is cheaked */
+ul li::before{
+  content: '';
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  left: 10px;
+  top: 15px;
+}
+
+ul li.checked {
+  color: black;
+  text-decoration: line-through;
+}
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: black;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 15px;
+  left: 15px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+span.check {
+  position: absolute;
+  right: 0;
+}
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: black;
+}
+#numberOfList,
+#numOfListDone {
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+}
+#numOfListRemain{
+  color: black;
+  font-size: 10px;
+}
+
+#numOfListRemain:hover{
+  color: blue;
+  font-weight: bolder;
+}
+
+
+.container {
+  position: absolute;
+  /* border: 2px solid red; */
+  column-gap: 5px;
+  width: 500px;
+  left: 30%;
+}
+
+.someBtns {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: baseline;
 }
