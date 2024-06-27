@@ -27,12 +27,16 @@ Welcome to the ToDo App! This is a simple, yet powerful application to help you 
 
     ```bash
     yarn install
+    or
+    npm insall
     ```
 
 4. Start the development server:
 
     ```bash
     yarn start
+    or
+    npm start
     ```
 
 ## Usage 🚀
