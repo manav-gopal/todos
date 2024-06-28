@@ -1,213 +1,226 @@
 .container {
-    position: absolute;
-    column-gap: 5px;
-    width: 70%;
-    max-width: 500px;
-    height: 100%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // overflow: hidden;
-  
-    .header {
-      padding: 30px;
-      padding-top: 0;
-      color: aliceblue;
-      text-align: center;
-      letter-spacing: 10px;
-      &::after {
-        content: "";
-        display: table;
-        clear: both;
+  position: absolute;
+  column-gap: 5px;
+  width: 70%;
+  max-width: 500px;
+  height: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // overflow: hidden;
+
+  .header {
+    padding: 30px;
+    padding-top: 0;
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 10px;
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    h2 {
+      margin: 0;
+      padding: 5px;
+      margin-top: 30px;
+      text-transform: uppercase;
+      word-spacing: 20px;
+    }
+  }
+
+  .myUL {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    box-shadow: 3px 5px 30px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    border-radius: 10px;
+    #myForm {
+      display: flex;
+      input {
+        border: none;
+        border-bottom: 2px solid grey;
+        border-radius: 10px 0 0 0;
+        width: 75%;
+        padding: 10px;
+        float: left;
+        font-size: 16px;
+        background: transparent;
+        outline: none;
+        color: aliceblue;
       }
-      h2 {
-        margin: 0;
-        padding: 5px;
-        margin-top: 30px;
-        text-transform: uppercase;
-        word-spacing: 20px;
+      .addBtn {
+        padding: 10px;
+        width: 25%;
+        background: transparent;
+        color: grey;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0 10px 0 0;
+        border: none;
+        border-bottom: 2px solid gray;
       }
     }
-  
-    .myUL {
-      -webkit-backdrop-filter: blur(5px);
-      backdrop-filter: blur(5px);
-      background-color: rgba(0, 0, 0, 0.5);
-      width: 80%;
-      box-shadow: 3px 5px 30px rgba(255, 255, 255, 0.3);
-      border: 2px solid rgba(128, 128, 128, 0.5);
-      border-radius: 10px;
-      #myForm {
+    .myList {
+      width: 100%;
+      max-height: 350px;
+      overflow-y: scroll;
+
+      li {
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        list-style-type: none;
+        font-size: 18px;
+        transition: 0.2s;
+        color: aliceblue;
+        user-select: none;
+        border-radius: 6px;
         display: flex;
-        input {
-          border: none;
-          border-bottom: 2px solid grey;
-          border-radius: 10px 0 0 0;
-          width: 75%;
-          padding: 10px;
-          float: left;
-          font-size: 16px;
-          background: transparent;
-          outline: none;
-          color: aliceblue;
+
+        &::before {
+          content: "";
+          position: absolute;
+          border: 1px solid aliceblue;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          left: 10px;
+          top: 15px;
         }
-        .addBtn {
-          padding: 10px;
-          width: 25%;
-          background: transparent;
-          color: grey;
-          float: left;
-          text-align: center;
-          font-size: 16px;
-          cursor: pointer;
-          transition: 0.3s;
-          border-radius: 0 10px 0 0;
-          border: none;
-          border-bottom: 2px solid gray;
-        }
-      }
-      .myList {
-        width: 100%;
-        max-height: 350px;
-        overflow-y: scroll;
-  
-        li {
-          position: relative;
-          padding: 12px 8px 12px 40px;
-          list-style-type: none;
-          font-size: 18px;
-          transition: 0.2s;
-          color: aliceblue;
-          user-select: none;
-          border-radius: 6px;
-          display: flex;
-  
+
+        &.checked {
+          text-decoration: line-through;
+
           &::before {
             content: "";
             position: absolute;
-            border: 1px solid aliceblue;
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            left: 10px;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
             top: 15px;
+            left: 15px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
           }
-  
-          &.checked {
-            text-decoration: line-through;
-  
-            &::before {
-              content: "";
-              position: absolute;
-              border-style: solid;
-              border-width: 0 2px 2px 0;
-              top: 15px;
-              left: 15px;
-              transform: rotate(45deg);
-              height: 15px;
-              width: 7px;
-            }
+        }
+        .content {
+          width: 90%;
+          height: 100%;
+          cursor: pointer;
+        }
+
+        .close {
+          // position: absolute;
+          width: 10%;
+          height: 100%;
+          right: 0;
+          top: 0;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          overflow: hidden;
+          &:hover {
+            background-color: #aaaaaa1a;
           }
-          .content{
-            width: 90%;
-            height:100%;
-            cursor:pointer;
-          }
-  
-          .close {
-            // position: absolute;
-            width: 10%;
-            height: 100%;
-            right: 0;
-            top: 0;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            overflow: hidden;
-            &:hover {
-              background-color: #aaaaaa1a;
-            }
-            div {
-              transform: rotate(45deg);
-              width: 200%;
-              height: 200%;
-              text-align: center;
-              cursor: pointer;
-            }
+          div {
+            transform: rotate(45deg);
+            width: 200%;
+            height: 200%;
+            text-align: center;
+            cursor: pointer;
           }
         }
       }
-      .someBtns {
-        border-top: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .someBtns {
+      border-top: 2px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      .left {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        .left {
-          display: flex;
-          align-items: center;
-          justify-content: start;
-          width: 40%;
-          .clearBtn {
-            position: relative;
-            border: 0 solid;
-            background-color: transparent;
-            color: aliceblue;
-            border-radius: 6px;
-            font-size: .5rem;
-            height: 30px;
-            padding: 0 10px;
-            text-align: left;
-            cursor: pointer;
-            &:hover {
-              color: gold;
-            }
+        align-items: center;
+        justify-content: start;
+        width: 40%;
+        .clearBtn {
+          position: relative;
+          border: 0 solid;
+          background-color: transparent;
+          color: aliceblue;
+          border-radius: 6px;
+          font-size: 0.8rem;
+          height: 30px;
+          padding: 0 10px;
+          text-align: left;
+          cursor: pointer;
+          &:hover {
+            color: gold;
           }
-          #numOfListRemain {
-            cursor: pointer;
-            color: aliceblue;
-            font-size: .5rem;
-            text-align: left;
-            padding-left: 10px;
-            border-left: 2px solid rgba(240, 248, 255, 0.5);
-            &:hover {
-              color: gold;
-            }
+        }
+        #numOfListRemain {
+          cursor: pointer;
+          color: aliceblue;
+          font-size: 0.8rem;
+          text-align: left;
+          padding-left: 10px;
+          border-left: 2px solid rgba(240, 248, 255, 0.5);
+          &:hover {
+            color: gold;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        justify-content: flex-end;
+        button {
+          cursor: pointer;
+          border: 0px solid;
+          background: transparent;
+          color: aliceblue;
+          padding: 0 10px;
+          font-size: 0.8rem;
+          &:nth-child(2) {
+            border-right: 2px solid rgba(240, 248, 255, 0.5);
+          }
+          &.active,
+          &:hover {
+            color: gold;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: "769px") {
+  .container {
+    width: 100%;
+    .myUL {
+      width: 90%;
+      .myList {
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+      .someBtns {
+        .left {
+          .clearBtn, #numOfListRemain {
+            font-size: 0.5rem;
           }
         }
         .right {
-          display: flex;
-          align-items: center;
-          width: 60%;
-          justify-content: flex-end;
           button {
-            cursor: pointer;
-            border: 0px solid;
-            background: transparent;
-            color: aliceblue;
-            padding: 0 10px;
-            font-size: .5rem;
-            &:nth-child(2) {
-              border-right: 2px solid rgba(240, 248, 255, 0.5);
-            }
-            &.active, &:hover{
-              color: gold;
-            }
+            font-size: 0.5rem;
           }
         }
       }
     }
   }
-  @media screen and (max-width:'769px') {
-    .container{
-      width: 100%;
-      .myUL{
-        width: 90%;
-        .myList{
-          max-height: 300px;
-          overflow-y: scroll;
-        }
-      }
-    }
-  }
+}
